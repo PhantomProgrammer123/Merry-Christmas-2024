@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:wght@400;500&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import "compass/css3";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+  font-family: Poppins, sans-serif;
+}
+
+body{
+  background-color: #781714;
+  background-image: url(background.jpeg);
+	text-align: center;
+}
+
+.h1{
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Great Vibes", sans-serif;
+  font-size: 110px;
+  line-height: 3cm;
+}
+
+.gl{
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Eagle Lake", sans-serif;
+  font-size: 10px;
+}
+
+.mm{
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Eagle Lake", sans-serif;
+}
+
+#a{
+  margin-top: 200px;
+  color: #fff6a9;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 360px;
+}
+
+/* Snowflake base style */
+.snowflake {
+  position: fixed;
+  top: -50px;
+  color: white;
+  font-size: 1em;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  animation: fall linear infinite;
+}
+
+/* Falling animation with slight drift */
+@keyframes fall {
+  to {
+      transform: translateX(var(--horizontal-drift)) translateY(100vh) rotate(var(--rotation));
+  }
+}
+
+/* Lens flare effect style */
+.flare {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+}
+
+/* Blurred snowflake for depth */
+.blurred {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+h1{
+  color: #356;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+#clockdiv{
+	font-family: inherit;
+  color: #b32a07;
+	display: inline-block;
+	text-align: center;
+	font-size: 30px;
+  margin-top: 20px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 5px;
+	background: #ffa500;
+	display: inline-block;
+  margin: 5px;
+}
+
+#clockdiv div > span{
+	border-radius: 3px;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}

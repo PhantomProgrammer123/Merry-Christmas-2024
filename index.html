@@ -1,0 +1,119 @@
+<!-- 
+
+     __________                                ______________
+    |          |         |                    |
+    |          |         |                    |
+    |          |         |                    |
+    |__________|         |                    |
+    |                    |__________          |
+    |                    |          |         |
+    |                    |          |         |
+    |               _    |          |    _    |                  _ 
+    |              |_|   |          |   |_|   |______________   |_|
+
+
+    Copyright 2025 Phantom Coding
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Merry Christmas</title>
+</head>
+<body>
+    
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="h1 title-font">Merry Christmas</h1>
+            <p class=" gl mb-8 leading-relaxed">-- From Anmol Kumar --</p>
+            <div class="flex justify-center">
+              <button onclick="playaudio()" id="a" class="inline-flex text-white border-0 py-2 px-6 focus:outline-none rounded text-lg"><i class="fa-solid fa-play"></i></button>
+              <button onclick="stopaudio()" id="a" class="ml-4 inline-flex text-white  border-0 py-2 px-6 focus:outline-none rounded text-lg"><i class="fa-solid fa-pause"></i></button>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <!-- Countdown Clock Container -->
+    <h1 class="mm">
+      Countdown
+    </h1>
+    <div id="clockdiv">
+      <!-- Days -->
+      <div hidden>
+        <span id="daysBox"></span>
+        <div class="smalltext">Days</div>
+      </div>
+      <!-- Hours -->
+      <div>
+        <span id="hoursBox"></span>
+        <div class="smalltext">Hours</div>
+      </div>
+      <!-- Minutes -->
+      <div>
+        <span id="minsBox"></span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <!-- Seconds -->
+      <div>
+        <span id="secsBox"></span>
+        <div class="smalltext">Seconds</div>
+      </div>
+    </div>
+    <script>
+    function cdtd() {
+        var xmas = new Date("December 24, 2024 23:59:59");
+        var now = new Date();
+        var timeDiff = xmas.getTime() - now.getTime();
+        if (timeDiff <= 0) {
+            clearTimeout(timer);
+                // Run any code needed for countdown completion here
+                document.querySelector("#clockdiv").style.display="none";
+                    document.querySelector("#saleActive").style.display="none";
+                    document.querySelector("#saleEnded").style.display="block";				
+            }
+        var seconds = Math.floor(timeDiff / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+          hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+        document.getElementById("daysBox").innerHTML = days;
+        document.getElementById("hoursBox").innerHTML = hours;
+        document.getElementById("minsBox").innerHTML = minutes;
+        document.getElementById("secsBox").innerHTML = seconds;
+        var timer = setTimeout('cdtd()',1000);
+    }
+
+    
+
+    </script>
+    <script>cdtd();</script>
+
+    <audio controls autoplay loop hidden id="Christmas">
+        <source src="song.m4a">
+  </audio>
+  <script>
+		var a = document.getElementById("Christmas");
+		function playaudio() {
+			a.play();
+		}
+
+		function stopaudio() {
+			a.pause();
+			a.currentTime = 0;
+		}
+	</script>
+
+    <script src="main.js"></script>
+</body>
+</html>
